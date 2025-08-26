@@ -89,3 +89,8 @@ What it does:
 - Orchestrates all report generators concurrently: globe visualization (Three.js), interactive dashboard (Chart.js/D3), 3D scatter (Plotly), satellite images gallery, protein 3D viewer, and a YouTube embed page.
 - Each task emits a rich HTML report via `flyte.report`; `run_all` simply gathers them so you can open each artifact from the Union UI.
 
+### What's next?
+Go check out the examples in the flyte-org repo: https://github.com/flyteorg/flyte-sdk/tree/main/examples
+Check out our latest blogs and resources to see what we're up to: https://www.union.ai/resources
+Reach out on slack: https://slack.flyte.org/
+
