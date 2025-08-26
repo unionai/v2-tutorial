@@ -32,6 +32,20 @@ Running examples:
 - Use `flyte run ...` from your venv, or prefix with `uv run` if using uv.
 - Ensure your Flyte CLI is configured for your project/domain. You can pass `-p <project> -d <domain>` to the command if needed.
 
+## Authentication
+Create a flyte config file with:
+```
+flyte create config \
+    --endpoint <orgName>.hosted.unionai.cloud \
+    --builder remote \
+    --domain development \
+    --org <orgName> \
+    --project <projectName> \
+    --output ~/.union/config.yaml
+```
+
+Update this command to use the orgName and projectName for your org and project.
+
 ## Exercises
 
 ### 1) Hello Polyglot
