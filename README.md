@@ -3,7 +3,10 @@ A tutorial to introduce users to Flyte v2 features through examples
 
 ## Quick start
 
-Prereqs: Python 3.10+.
+**Prereqs**: 
+- Python 3.10+
+- A configured Flyte cluster (see [Authentication](#authentication) below)
+  - OR use `--local` flag to run examples locally without a cluster
 
 ### Option A: uv (recommended)
 
@@ -32,7 +35,17 @@ Running examples:
 - Use `flyte run ...` from your venv, or prefix with `uv run` if using uv.
 - Ensure your Flyte CLI is configured for your project/domain. You can pass `-p <project> -d <domain>` to the command if needed.
 
+**Note**: If you haven't configured Flyte (see [Authentication](#authentication) below), you can still test examples locally with:
+```
+flyte run --local <example> <task> [args...]
+```
+
+This runs without a remote cluster but won't demonstrate Flyte's distributed execution features.
+
 ## Authentication
+
+**REQUIRED** to run examples with remote execution. Without this, you'll get "Failed to get signed url" errors.
+
 Create a flyte config file with:
 ```
 flyte create config \
@@ -45,6 +58,22 @@ flyte create config \
 ```
 
 Update this command to use the orgName and projectName for your org and project.
+
+**Don't have a cluster?** Use `--local` flag to test examples without authentication:
+```
+flyte run --local <example> <task> [args...]
+```
+
+## Python 3.14+ Compatibility
+
+This repository is compatible with Python 3.14+ (tested on Fedora 43). The following fixes are automatically applied:
+
+1. **Traversable Import**: Python 3.14 moved `Traversable` from `importlib.abc` to `collections.abc`. A compatibility patch (`_polyglot_patch.py`) is auto-loaded to handle this gracefully.
+
+2. **Local Testing**: All examples can be tested locally without a Flyte cluster using the `--local` flag:
+   ```bash
+   uv run flyte run --local <example> <task> [args...]
+   ```
 
 ## Exercises
 
