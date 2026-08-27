@@ -1,0 +1,4 @@
+# Codex CLI MCP configuration for this tutorial.
+# Codex also reads ~/.codex/config.toml; this project-local copy works in trusted projects.
+[mcp_servers.flyte]
+url = "https://flyte-mcp.apps.demo.hosted.unionai.cloud/flyte-mcp/mcp"
